@@ -5,26 +5,27 @@
     (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
       v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
       o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-      y=e.createElement(n);y.async=!0;y.src='https://pendo-atlas-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+      y=e.createElement(n);y.async=!0;y.src='https://pendo-test-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
       z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-  })('358d840f-d7f9-4999-4d02-fffb827c114a');
+  })('69f02d3c-30cd-4eaa-7449-8ea82fd6effe');
 </script>
     <script>
         pendo.initialize({
             visitor: {
-                id:              'jensid'   // Required if user is logged in
+                id:              'jenshevach'   // Required if user is logged in
             },
             account: {
-                id:           'jensacct' // Highly recommended
+                id:           'my_first_via_org' // Highly recommended
             }
         });
     </script>
 </head>
 <body>
-<h1>V 9-25-18.14-31</h1>
-<button type="button" onclick="alert('Page Two!')">Click Me Again!</button>
-<a href="https://jenshevach.github.io">Visit the Home Page!</a>
- 
+<h1>Staging Page</h1>
+<button type="button" onclick="alert('This is the Staging Test Page')">Click Me!</button>
+<a href="https://jenshevach.github.io">Visit the Atlas Page!</a>
+<p>Version: 10/27/18 -01</p>
+
 </body>
 </html>
 
