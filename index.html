@@ -10,21 +10,29 @@
   })('358d840f-d7f9-4999-4d02-fffb827c114a');
 </script>
     <script>
-        pendo.initialize({
-            visitor: {
-                id:              'jensid'   // Required if user is logged in
-            },
-            account: {
-                id:           'jensacct' // Highly recommended
-            }
-        });
+        function myFunction() {
+            var visitor = document.getElementById("myVisitor").value;
+            var account = document.getElementById("myAccount").value;
+            pendo.initialize({
+                visitor: {
+                    id:              visitor   // Required if user is logged in
+                },
+                account: {
+                    id:           account // Highly recommended
+                }
+            });
+        }
     </script>
 </head>
 <body>
 <h1>Atlas Page</h1>
 <button type="button" onclick="alert('This is the Atlas Test Page')">Click Me!</button>
 <a href="https://jenshevach.github.io/staging.html">Visit The Staging Page!</a>
-<p>Version: 10/27/18 -03</p>
+<h1>Change visitor and account</h1>
+<input type="text" id="myVisitor" value="anonymous">
+<input type="text" id="myAccount" value="">
+<button onclick="myFunction()">Change Login</button>
+<p>Version: 10/28/18 -01</p>
 
 
 </body>
