@@ -7,31 +7,22 @@
       o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
       y=e.createElement(n);y.async=!0;y.src='https://pendo-atlas-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
       z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-
-      pendo.initialize({
-          visitor: {
-              id:              'jennifer@pendo.io'   // Required if user is logged in
-              // email:        // Optional
-              // role:         // Optional
-
-              // You can add any additional visitor level key-values here,
-              // as long as it's not one of the above reserved names.
-          },
-
-          account: {
-              id:           'pendo' // Highly recommended
-              // name:         // Optional
-              // planLevel:    // Optional
-              // planPrice:    // Optional
-              // creationDate: // Optional
-
-              // You can add any additional account level key-values here,
-              // as long as it's not one of the above reserved names.
-          }
-      });
-
   })('358d840f-d7f9-4999-4d02-fffb827c114a');
 </script>
+    <script>
+        function myFunction() {
+            var visitor = document.getElementById("myVisitor").value;
+            var account = document.getElementById("myAccount").value;
+            pendo.initialize({
+                visitor: {
+                    id:              visitor   // Required if user is logged in
+                },
+                account: {
+                    id:           account // Highly recommended
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <h1>Atlas Page</h1>
@@ -39,7 +30,11 @@
 <a href="https://jenshevach.github.io/another-page.html">Visit Another Page!</a>
 <a href="https://jenshevach.github.io/staging.html">Visit The Staging Page!</a>
 <a href="https://jenshevach.github.io/dev.html">Visit The Dev Page!</a>
-<p>Version: 02/07/19 c</p>
+<h1>Change visitor and account:</h1>
+<input type="text" id="myVisitor" value="anonymous">
+<input type="text" id="myAccount" value="">
+<button onclick="myFunction()">Change Login</button>
+<p>Version: 02/07/19</p>
 
 
 </body>
