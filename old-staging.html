@@ -1,0 +1,39 @@
+<html>
+<head>
+    <script>
+        (function(apiKey){
+            (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+                v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+                    o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+                y=e.createElement(n);y.async=!0;y.src='https://pendo-test-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+                z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+        })('b77dbc46-4575-4367-5ed1-c194c3202e82');
+    </script>
+    <script>
+        function myFunction() {
+            var visitor = document.getElementById("myVisitor").value;
+            var account = document.getElementById("myAccount").value;
+            pendo.initialize({
+                visitor: {
+                    id:              visitor   // Required if user is logged in
+                },
+                account: {
+                    id:           account // Highly recommended
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Staging Page</h1>
+<button type="button" onclick="alert('This is the Staging Test Page')">Click Me!</button>
+<a href="https://jenshevach.github.io">Visit the Atlas Page!</a>
+<a href="https://jenshevach.github.io/dev.html">Visit The Dev Page!</a>
+<h1>Change visitor and account</h1>
+<input type="text" id="myVisitor" value="anonymous">
+<input type="text" id="myAccount" value="">
+<button onclick="myFunction()">Change Login</button>
+<p>Version: 02/09/19</p>
+</body>
+</html>
+
