@@ -13,9 +13,14 @@
         function myFunction() {
             var visitor = document.getElementById("myVisitor").value;
             var account = document.getElementById("myAccount").value;
+            var role = document.getElementById("myRole").value;
+            var privateInfo = document.getElementById("myPrivateInfo").value;
+
             pendo.initialize({
                 visitor: {
-                    id:              visitor   // Required if user is logged in
+                    id:              visitor,   // Required if user is logged in
+                    role: role,
+                    privateInfo: privateInfo
                 },
                 account: {
                     id:           account // Highly recommended
@@ -31,10 +36,12 @@
 <a href="https://jenshevach.github.io/staging.html">Visit The Staging Page!</a>
 <a href="https://jenshevach.github.io/dev.html">Visit The Dev Page!</a>
 <h1>Change visitor and account:</h1>
-<input type="text" id="myVisitor" value="anonymous">
-<input type="text" id="myAccount" value="">
-<button onclick="myFunction()">Change Login</button>
-<p>Version: 02/07/19</p>
+Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
+Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
+Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
+Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
+<button onclick="myFunction()">Set Login</button>
+<p>Version: 05/05/19</p>
 
 
 </body>
