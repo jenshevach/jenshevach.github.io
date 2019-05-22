@@ -17,11 +17,7 @@ function generate_jwt() {
         }
     };
 
-    console.log("snippet: "+snippet);
-
     var jwt_token = jwt.sign(snippet, "2f14b5a7-e048-4d37-780d-e837bb68269e", {algorithm: "HS256"}); // A JWT token created using your shared secret
-
-    console.log("token: "+jwt_token);
 
     return JSON.stringify({ // The encoded token should be passed to the frontend as a javascript object
         jwt: jwt_token
