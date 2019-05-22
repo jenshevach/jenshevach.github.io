@@ -9,39 +9,82 @@
       z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
   })('358d840f-d7f9-4999-4d02-fffb827c114a');
 </script>
+    <script src="generate-jwt.js"></script>
     <script>
-        function myFunction() {
+        function basic_install(isUpdate) {
             var visitor = document.getElementById("myVisitor").value;
             var account = document.getElementById("myAccount").value;
             var role = document.getElementById("myRole").value;
             var privateInfo = document.getElementById("myPrivateInfo").value;
 
-            pendo.initialize({
-                visitor: {
-                    id:              visitor,   // Required if user is logged in
-                    role: role,
-                    privateInfo: privateInfo
-                },
-                account: {
-                    id:           account // Highly recommended
-                }
-            });
+            if(isUpdate){
+                pendo.updateOptions({
+                    visitor: {
+                        id:              visitor,   // Required if user is logged in
+                        role: role,
+                        privateInfo: privateInfo
+                    },
+                    account: {
+                        id:           account // Highly recommended
+                    }
+                });
+            }else{
+                pendo.initialize({
+                    visitor: {
+                        id:              visitor,   // Required if user is logged in
+                        role: role,
+                        privateInfo: privateInfo
+                    },
+                    account: {
+                        id:           account // Highly recommended
+                    }
+                });
+
+            }
+        }
+    </script>
+    <script>
+        function secure_install(isUpdate) {
+            var visitor = generate_jwt();
+            var account = "secure_snippet";
+
+            if(isUpdate){
+                pendo.updateOptions({
+                    visitor: {
+                        id:              visitor   // Required if user is logged in
+                    },
+                    account: {
+                        id:           account // Highly recommended
+                    }
+                });
+            }else{
+                pendo.initialize({
+                    visitor: {
+                        id:              visitor   // Required if user is logged in
+                    },
+                    account: {
+                        id:           account // Highly recommended
+                    }
+                });
+            }
         }
     </script>
 </head>
 <body>
 <h1>Atlas Page</h1>
 <button type="button" onclick="alert('This is the Atlas Test Page')">Click Me!</button>
-<a href="https://jenshevach.github.io/another-page.html">Visit Another Page!</a>
-<a href="https://jenshevach.github.io/staging.html">Visit The Staging Page!</a>
-<a href="https://jenshevach.github.io/dev.html">Visit The Dev Page!</a>
-<h1>Change visitor and account:</h1>
+<h1>Set visitor and account:</h1>
 Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
 Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
 Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
 Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
-<button onclick="myFunction()">Set Login</button>
-<p>Version: 05/05/19</p>
+<h1>Initialize:</h1>
+<button onclick="basic_install(false)">INIT Basic Install</button>
+<button onclick="secure_install(false)">INIT Secure Install</button><br><br>
+<h1>Udpate:</h1>
+<button onclick="basic_install(true)">UPD Basic Install</button>
+<button onclick="secure_install(true)">UPD Secure Install</button><br><br>
+<p>Version: 05/22/19</p>
 
 
 </body>
