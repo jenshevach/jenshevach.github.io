@@ -17,7 +17,8 @@
                 visitor: {
                     id:              visitor,   // Required if user is logged in
                     role: role,
-                    privateInfo: privateInfo
+                    privateInfo: privateInfo,
+                    email: email
                 },
                 account: {
                     id:           account // Highly recommended
@@ -41,13 +42,15 @@
             var account = document.getElementById("myAccount").value;
             var role = document.getElementById("myRole").value;
             var privateInfo = document.getElementById("myPrivateInfo").value;
+            var email = document.getElementById("myEmail").value;
 
             if(isUpdate){
                 pendo.updateOptions({
                     visitor: {
                         id:              visitor,   // Required if user is logged in
                         role: role,
-                        privateInfo: privateInfo
+                        privateInfo: privateInfo,
+                        email: email
                     },
                     account: {
                         id:           account // Highly recommended
@@ -58,7 +61,8 @@
                     visitor: {
                         id:              visitor,   // Required if user is logged in
                         role: role,
-                        privateInfo: privateInfo
+                        privateInfo: privateInfo,
+                        email: email
                     },
                     account: {
                         id:           account // Highly recommended
@@ -74,7 +78,8 @@
             var account = document.getElementById("myAccount").value;
             var role = document.getElementById("myRole").value;
             var privateInfo = document.getElementById("myPrivateInfo").value;
-            var token = generate_jwt(visitor,account,role,privateInfo);
+            var email = document.getElementById("myEmail").value;
+            var token = generate_jwt(visitor,account,role,privateInfo,email);
 
             if(isUpdate){
                 pendo.updateOptions({
@@ -106,6 +111,7 @@ Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
 Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
 Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
 Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
+Email:&nbsp;<input type="text" id="myEmail" value=""><br><br>
 <h1>Initialize:</h1>
 <button onclick="basic_install(false)">INIT Basic Install</button>
 <button onclick="secure_install(false)">INIT Secure Install</button><br><br>
