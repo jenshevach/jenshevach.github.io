@@ -73,8 +73,8 @@
                                 "BgxMOLPwVaPozCkik0YIF2Hs8EY": "foo"
                             };
 
-                            if (guideStrings[guide] !== hashableGuideString) {
-                                console.log("guide " + guide + " failed validation");
+                            if (guideStrings[guide.id] !== hashableGuideString) {
+                                console.log("guide " + guide.id + " failed validation");
                                 return false;
                             }
                         }
