@@ -44,59 +44,69 @@
             var privateInfo = document.getElementById("myPrivateInfo").value;
             var email = document.getElementById("myEmail").value;
 
-            if(isUpdate){
+            if (isUpdate) {
                 pendo.updateOptions({
                     visitor: {
-                        id:              visitor,   // Required if user is logged in
+                        id: visitor,   // Required if user is logged in
                         role: role,
                         privateInfo: privateInfo,
                         email: email
                     },
                     account: {
-                        id:           account // Highly recommended
+                        id: account // Highly recommended
                     }
                 });
-            }else{
+            } else {
                 pendo.initialize({
                     visitor: {
-                        id:              visitor,   // Required if user is logged in
+                        id: visitor,   // Required if user is logged in
                         role: role,
                         privateInfo: privateInfo,
                         email: email
                     },
                     account: {
-                        id:           account // Highly recommended
+                        id: account // Highly recommended
+                    },
+                    events: {
+                        validateGuide: function (hashableGuideString, guide) {
+                            var guideStrings = {
+                                "BgxMOLPwVaPozCkik0YIF2Hs8EY": "foo"
+                            };
+
+                            if (guideStrings[guide] !== hashableGuideString) {
+                                return false;
+                            }
+                        }
                     }
                 });
 
             }
         }
-    </script>
-    <script>
+
         function secure_install(isUpdate) {
             var visitor = document.getElementById("myVisitor").value;
             var account = document.getElementById("myAccount").value;
             var role = document.getElementById("myRole").value;
             var privateInfo = document.getElementById("myPrivateInfo").value;
             var email = document.getElementById("myEmail").value;
-            var token = generate_jwt(visitor,account,role,privateInfo,email);
+            var token = generate_jwt(visitor, account, role, privateInfo, email);
 
-            if(isUpdate){
+            if (isUpdate) {
                 pendo.updateOptions({
                     visitor: {
-                        id:              token   // Required if user is logged in
+                        id: token   // Required if user is logged in
                     },
                     account: {
-                        id:           "secure_snippet" // Highly recommended
+                        id: "secure_snippet" // Highly recommended
                     }
                 });
-            }else{
+            } else {
                 pendo.initialize({
                     visitor: {
-                        id:              token   // Required if user is logged in
+                        id: token   // Required if user is logged in
                     },
                     account: {
-                        id:           "secure_snippet" // Highly recommended
+                        id: "secure_snippet" // Highly recommended
                     }
                 });
             }
@@ -118,7 +128,7 @@ Email:&nbsp;<input type="text" id="myEmail" value=""><br><br>
 <h1>Udpate:</h1>
 <button onclick="basic_install(true)">UPD Basic Install</button>
 <button onclick="secure_install(true)">UPD Secure Install</button><br><br>
-<p>Version: 05/22/19 -5</p>
+<p>Version: June 14, 2019</p>
 
 
 </body>
