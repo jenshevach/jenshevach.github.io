@@ -1,0 +1,61 @@
+<html>
+<head>
+<script>
+  (function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+      v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+      o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+      y=e.createElement(n);y.async=!0;y.src='https://pendo-mobile-plat-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+      z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+  })('c7d6029f-40f3-48e8-7a52-6b8777eff7d5');
+</script>
+    <script src="https://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js">
+    </script>
+    <script>
+        function generate_jwt(visitor, account, role, privateInfo) {
+            var snippet = {
+                visitor: {
+                    id:              visitor,   // Required if user is logged in
+                    role: role,
+                    privateInfo: privateInfo,
+                    email: email
+                },
+                account: {
+                    id:           account // Highly recommended
+                }
+            };
+
+            // Header
+            var oHeader = {alg: 'HS256', typ: 'JWT'};
+            var sHeader = JSON.stringify(oHeader);
+
+            var sJWT = KJUR.jws.JWS.sign("HS256", sHeader, snippet, "2f14b5a7-e048-4d37-780d-e837bb68269e");
+
+            return JSON.stringify({ // The encoded token should be passed to the frontend as a javascript object
+                jwt: sJWT
+            });
+        }
+    </script>
+    <script src="guide-whitelist.js"></script>
+</head>
+<body>
+<h1>Atlas Page</h1>
+<button type="button" onclick="alert('This is the Platform Test Page')">Click Me!</button>
+<h1>Set visitor and account:</h1>
+Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
+Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
+Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
+Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
+Email:&nbsp;<input type="text" id="myEmail" value=""><br><br>
+<h1>Initialize:</h1>
+<button onclick="basic_install(false)">INIT Basic Install</button>
+<button onclick="secure_install(false)">INIT Secure Install</button><br><br>
+<h1>Udpate:</h1>
+<button onclick="basic_install(true)">UPD Basic Install</button>
+<button onclick="secure_install(true)">UPD Secure Install</button><br><br>
+<p>Version: June 14, 2019 -8</p>
+
+
+</body>
+</html>
+
