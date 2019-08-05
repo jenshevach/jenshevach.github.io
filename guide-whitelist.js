@@ -6,6 +6,7 @@ function basic_install(isUpdate) {
     var email = document.getElementById("myEmail").value;
     var newfield = document.getElementById("newfield").value;
     var newfieldval = document.getElementById("newfieldval").value;
+    var empCount = document.getElementById("empCount").value;
 
     if (isUpdate) {
         var updOpts = {
@@ -16,7 +17,8 @@ function basic_install(isUpdate) {
                 email: email
             },
             account: {
-                id: account // Highly recommended
+                id: account, // Highly recommended
+                employee_count: empCount
             }
         };
         updOpts.account[newfield] = newfieldval;
@@ -31,7 +33,8 @@ function basic_install(isUpdate) {
                 email: email
             },
             account: {
-                id: account // Highly recommended
+                id: account, // Highly recommended
+                employee_count: empCount
             }
         };
         initOpts.account[newfield] = newfieldval;
