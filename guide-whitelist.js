@@ -21,7 +21,9 @@ function basic_install(isUpdate) {
                 employee_count: empCount
             }
         };
-        updOpts.account[newfield] = newfieldval;
+        if(newfieldval !== "" && newfield !== "") {
+            updOpts.account[newfield] = newfieldval;
+        }
         pendo.updateOptions(updOpts);
     } else {
         var initOpts = {
@@ -37,7 +39,9 @@ function basic_install(isUpdate) {
                 employee_count: empCount
             }
         };
-        initOpts.account[newfield] = newfieldval;
+        if(newfieldval !== "" && newfield !== "") {
+            initOpts.account[newfield] = newfieldval;
+        }
         pendo.initialize(initOpts);
     }
 }
