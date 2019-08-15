@@ -1,6 +1,7 @@
 function basic_install(isUpdate) {
     var visitor = document.getElementById("myVisitor").value;
     var account = document.getElementById("myAccount").value;
+    var language = document.getElementById("myLanguage").value;
     var role = document.getElementById("myRole").value;
     var privateInfo = document.getElementById("myPrivateInfo").value;
     var email = document.getElementById("myEmail").value;
@@ -12,6 +13,7 @@ function basic_install(isUpdate) {
         var updOpts = {
             visitor: {
                 id: visitor,   // Required if user is logged in
+                language: language,
                 role: role,
                 privateInfo: privateInfo,
                 email: email
@@ -29,6 +31,7 @@ function basic_install(isUpdate) {
         var initOpts = {
             visitor: {
                 id: visitor,   // Required if user is logged in
+                language: language,
                 role: role,
                 privateInfo: privateInfo,
                 email: email
