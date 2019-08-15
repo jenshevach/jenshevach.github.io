@@ -27,7 +27,6 @@ function basic_install(isUpdate) {
         pendo.updateOptions(updOpts);
     } else {
         var initOpts = {
-            apiKey: "358d840f-d7f9-4999-4d02-fffb827c114a",
             visitor: {
                 id: visitor,   // Required if user is logged in
                 role: role,
@@ -44,4 +43,16 @@ function basic_install(isUpdate) {
         }
         pendo.initialize(initOpts);
     }
+}
+
+function pendo_login() {
+    var initOpts = {
+        visitor: {
+            id: "jennifer@pendo.io"
+        },
+        account: {
+            id: "Pendo"
+        }
+    };
+    pendo.initialize(initOpts);
 }
