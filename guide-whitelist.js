@@ -13,7 +13,7 @@ function basic_install(isUpdate) {
         var updOpts = {
             visitor: {
                 id: visitor,   // Required if user is logged in
-                language: language,
+                custom_language: language,
                 role: role,
                 privateInfo: privateInfo,
                 email: email
@@ -31,7 +31,7 @@ function basic_install(isUpdate) {
         var initOpts = {
             visitor: {
                 id: visitor,   // Required if user is logged in
-                language: language,
+                custom_language: language,
                 role: role,
                 privateInfo: privateInfo,
                 email: email
