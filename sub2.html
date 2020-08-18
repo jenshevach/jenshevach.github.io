@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+  (function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+      v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+      o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+      y=e.createElement(n);y.async=!0;y.src='https://pendo-atlas-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+      z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+  })('2baf71c5-c1e0-4269-6c9e-46590f196d99');
+</script>
+</head>
+<body>
+<h1>Atlas Sub 2 Page</h1>
+<button type="button" onclick="alert('This is the Atlas II Test Page')">Click Me!</button>
+<h1>Set visitor and account:</h1>
+Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
+Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
+Language:&nbsp;<input type="text" id="myLanguage" value=""><br><br>
+Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
+Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
+Email:&nbsp;<input type="text" id="myEmail" value=""><br><br>
+Current Employee Count:&nbsp;<input type="text" id="empCount" value=""><br><br>
+New Account Metadata Field: <input type="text" id="newfield" value="">&nbsp;&nbsp;Value: <input type="text" id="newfieldval" value=""><br><br>
+<h1>Initialize:</h1>
+<button onclick="basic_install(false)">INIT Basic Install</button>
+<h1>Update:</h1>
+<button onclick="basic_install(true)">UPD Basic Install</button>
+<h1>PENDO Login:</h1>
+<button onclick="pendo_login()">PENDO Login</button>
+<p>Version: August 17, 2020/p>
+
+
+</body>
+</html>
+
