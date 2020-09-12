@@ -7,29 +7,42 @@
       o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
       y=e.createElement(n);y.async=!0;y.src='https://pendo-atlas-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
       z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-  })('2baf71c5-c1e0-4269-6c9e-46590f196d99');
+  })('6977ff92-ac9d-48e2-6b84-341de890f9f0');
 </script>
     <script src="guide-whitelist.js"></script>
+    <script>
+        function showHideAdditionalMetadata() {
+            var x = document.getElementById("additional-metadata");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+    </script>
 </head>
 <body>
-<h1>Atlas Sub 2 Page</h1>
-<a href="https://jenshevach.github.io/sub2-web22.html">Go to the Web Twenty-Two page</a>
-<button type="button" onclick="alert('This is the Atlas II Test Page')">Click Me!</button>
+<h1>Atlas Sub Twenty-Two Page</h1>
+<a href="https://jenshevach.github.io/sub2.html">Go to the Jen Test 2 page</a>
+<button type="button" onclick="alert('This is the Atlas Sub Twenty-Two Test Page')">Click Me!</button>
 <h1>Set visitor and account:</h1>
 Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
 Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
+<button onclick="showHideAdditionalMetadata()">Show/Hide Additional Metadata</button>
+<div id="additional-metadata" style="display:none">
 Language:&nbsp;<input type="text" id="myLanguage" value=""><br><br>
 Role:&nbsp;<input type="text" id="myRole" value=""><br><br>
 Private Info:&nbsp;<input type="text" id="myPrivateInfo" value=""><br><br>
 Email:&nbsp;<input type="text" id="myEmail" value=""><br><br>
 Current Employee Count:&nbsp;<input type="text" id="empCount" value=""><br><br>
 New Account Metadata Field: <input type="text" id="newfield" value="">&nbsp;&nbsp;Value: <input type="text" id="newfieldval" value=""><br><br>
+</div>
 <h1>Initialize:</h1>
 <button onclick="basic_install(false)">INIT Basic Install</button>
-<h1>Update:</h1>
-<button onclick="basic_install(true)">UPD Basic Install</button>
 <h1>PENDO Login:</h1>
 <button onclick="pendo_login()">PENDO Login</button>
+<br><br>
 <p>Version: September 12, 2020 -2</p>
 
 
