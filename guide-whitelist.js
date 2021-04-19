@@ -59,3 +59,15 @@ function pendo_login() {
     };
     pendo.initialize(initOpts);
 }
+
+function partner_login() {
+    var initOpts = {
+        visitor: {
+            id: "jennifer+v1partner@pendo.io"
+        },
+        account: {
+            id: "v1Partner"
+        }
+    };
+    pendo.initialize(initOpts);
+}
