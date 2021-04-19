@@ -61,12 +61,34 @@ function pendo_login() {
 }
 
 function partner_login() {
+    var partnerVersion = document.getElementById("partner").value;
+
+    if (partnerVersion === '47292b3d-2fa7-4d91-7818-3ef8f0d0ad98') {
+        v1partner_login()
+    } else {
+        v2partner_login()
+    }
+}
+
+function v1partner_login() {
     var initOpts = {
         visitor: {
             id: "jennifer+v1partner@pendo.io"
         },
         account: {
             id: "v1Partner"
+        }
+    };
+    pendo.initialize(initOpts);
+}
+
+function v2partner_login() {
+    var initOpts = {
+        visitor: {
+            id: "jennifer+v2partner@pendo.io"
+        },
+        account: {
+            id: "v2Partner"
         }
     };
     pendo.initialize(initOpts);
