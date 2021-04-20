@@ -12,10 +12,23 @@
             }
         }
     </script>
+    <script>
+        function showMyForm() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var formNumber = urlParams.get("form");
+            if (formNumber === "123") {
+                document.getElementById("my-form-123").style.display = "block";
+            } else if (formNumber === "456") {
+                document.getElementById("my-form-456").style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
 <h1>Atlas Partner Page</h1>
 <button type="button" onclick="alert('This is the Atlas PARTNER Test Page :)')">Click Me!</button>
+<div id="my-form-123" style="display: none">Form 123</div>
+<div id="my-form-456" style="display: none">Form 456</div>
 <h1>Select Partner</h1>
 <select name="partner" id="partner">
     <option value="47292b3d-2fa7-4d91-7818-3ef8f0d0ad98" selected>V One</option>
@@ -38,7 +51,7 @@ New Account Metadata Field: <input type="text" id="newfield" value="">&nbsp;&nbs
 <button onclick="basic_install(false)">INIT Basic Install</button>
 <h1>PARTNER Login:</h1>
 <button onclick="partner_login()">PENDO Login</button>
-<p>Version: April 19, 2021 -2</p>
+<p>Version: April 20, 2021</p>
 
 </body>
 </html>
