@@ -21,10 +21,23 @@
         }
 
     </script>
+    <script>
+        function showMyForm() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var formNumber = urlParams.get("form");
+            if (formNumber === "123") {
+                document.getElementById("my-form-123").style.display = "block";
+            } else if (formNumber === "456") {
+                document.getElementById("my-form-456").style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
 <h1>Adopt On Core</h1>
 <button type="button" onclick="alert('This is the Adopt On Core Test Page')">Click Me!</button>
+<div id="my-form-123" style="display: none">Form 123</div>
+<div id="my-form-456" style="display: none">Form 456</div>
 <h1>Set visitor and account:</h1>
 Visitor:&nbsp;<input type="text" id="myVisitor" value=""><br><br>
 Account:&nbsp;<input type="text" id="myAccount" value=""><br><br>
